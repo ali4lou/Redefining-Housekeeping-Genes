@@ -7,7 +7,6 @@ This repository is organized into two main folders:
 
 - **`result_codes/`** – Python scripts used to reproduce each analysis presented in the paper.
 - **`files/`** – Required datasets and annotation files (**provided as compressed files**).  
-  These same datasets are also available on Zenodo (link below).
 
 ---
 
@@ -26,3 +25,11 @@ This repository is organized into two main folders:
 | `enrichment_U_hourglass.py`, `young_genes_enrichment.py` | GO enrichment of evolutionary subsets (U-old, S/hS-young classes) | Table **S5** | Same as `gene_ontology.py` + run `great_library_phenotype.py` first |
 
 ---
+
+## References
+
+White, R. J., et al. (2017). A high-resolution mRNA expression time course of embryonic development in zebrafish. eLife, 6, e30860.
+https://doi.org/10.7554/eLife.30860
+
+Hu, P., et al. (2015). Global identification of the genetic networks and cis-regulatory elements of the cold response in zebrafish. Nucleic Acids Research, 43(19), 9198–9213.
+https://doi.org/10.1093/nar/gkv780
