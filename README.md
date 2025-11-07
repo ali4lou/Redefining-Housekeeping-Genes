@@ -15,7 +15,7 @@ This repository is organized into two main folders:
 | Script(s) | Purpose | Output (Figures/Tables) | Required Files (from `files/`) |
 |---|---|---|---|
 | `dev_classification.py` | Identifies developmental gene classes and generates visualizations | Figures **1**, **S1** | Bulk embryonic RNA-seq dataset (White et al., 2017) |
-| `bulk_tissue.py` | Classifies genes by tissue specificity and compares to developmental classes | Tissue-specific classifications | Tissue RNA-seq dataset (Hu et al., 2015; GEO **GSE62221**) |
+| `bulk_tissue.py` | Classifies genes by tissue specificity and compares to developmental classes | Tissue-specific classifications | Tissue RNA-seq dataset (Hu et al., 2015; GEO GSE62221) |
 | `TF_cofactors.py` | Transcription factor and cofactor class composition analysis | Figures **2B–2C** | `Danio_rerio_TF`, `Danio_rerio_cof` (AnimalTFDB4) |
 | `figure_GO_terms.py` | Summary visualization of GO terms enrichment | Figure **2A** | Output of GO enrichment scripts |
 | `zebrafish_ontology.py`, `anatomical_pleio_subclasses.py`, `ontology_genes_phen_per_stage_and_lethality.py` | Anatomical pleiotropy and developmental lethality analysis | Figures **4**, **S3**, Table **S4** | ZFIN ontology and phenotype files |
