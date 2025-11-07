@@ -33,9 +33,8 @@ def find_ancestors(reverse_graph, term):
                 stack.append(parent)
     return ancestors
 
-path='/media/alicia/TOSHIBA EXT/zebrafish/files(Copy)/'
 
-# path='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
 
 
 #0.) Zfin phen descrip
@@ -564,6 +563,7 @@ print('U vs hS:', ks_U_hS, pvalue_U_hS)
 ks_S_hS, pvalue_S_hS = stats.ks_2samp(hS_dev_S_tis_pleio, hS_dev_hS_tis_pleio)
 print('S vs hS:', ks_S_hS, pvalue_S_hS)
 print('No significant difference between all the age distrib')
+
 
 
 
