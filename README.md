@@ -22,7 +22,7 @@ This repository is organized into two main folders:
 | `gene_origin.py` | Evolutionary gene age analysis | Figures **5**, **S4** | `gene_origin.csv` (GenOrigin) |
 | `homology.py` | Paralog and ortholog homology analysis | Figures **6**, **S5**, Table **S6** | `paralog.txt`, `human_orthos.txt` |
 | `gene_ontology.py` | GO enrichment for gene classes | Tables **S2**, **S3** | `go.obo`, `zfin.gaf` *(run `great_library_phenotype.py` first)* |
-| `enrichment_U_hourglass.py`, `young_genes_enrichment.py` | GO enrichment of evolutionary subsets (U-old, S/hS-young classes) | Table **S5** | Same as `gene_ontology.py` + *(run `great_library_phenotype.py` first)* |
+| `enrichment_U_hourglass.py`, `young_genes_enrichment.py` | GO enrichment of evolutionary subsets (U-old, S/hS-young classes) | Table **S5** | Same as `gene_ontology.py`, *(run `great_library_phenotype.py` first)* |
 
 ---
 
