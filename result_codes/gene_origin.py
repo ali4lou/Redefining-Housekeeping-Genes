@@ -412,10 +412,130 @@ plt.show()
 
 
 
-#===================================================================================
-#7.) Sliding window for each subclass
+# =============================================================================
+# 7.)Transcriptome Age Index (TAI)
+# =============================================================================
+#We use all the genes to compute the TAI -> #Sum(expresion * age) / Sum(expresion)
+common_genes, ind_bulk, ind_age = np.intersect1d(genes_bulk, genes_df, return_indices=True)
 
-#7.1.) We read the subclasses
+aligned_expr = mean_bulk_matrix[ind_bulk, :] 
+aligned_ages_raw = age_df[ind_age]
+
+aligned_ages_myr = np.array([4290.0 if str(x) == '>4290' else float(x) for x in aligned_ages_raw])
+edades_unicas_ordenadas = np.sort(np.unique(aligned_ages_myr))[::-1]
+ps_dict = {edad: rango + 1 for rango, edad in enumerate(edades_unicas_ordenadas)}
+aligned_ps = np.array([ps_dict[edad] for edad in aligned_ages_myr])
+# -----------------------------------------------------------------------------
+
+num_stages = aligned_expr.shape[1]
+TAI_per_stage = np.zeros(num_stages)
+
+for s in range(num_stages):
+    expr_at_stage = aligned_expr[:, s] 
+    total_expr = np.sum(expr_at_stage) 
+    
+    if total_expr > 0:
+        TAI_per_stage[s] = np.sum(expr_at_stage * aligned_ps) / total_expr
+    else:
+        TAI_per_stage[s] = 0
+
+print("Evolutionary categories (nodes):", len(edades_unicas_ordenadas))
+print("Detected ages:", edades_unicas_ordenadas)
+
+plt.figure(figsize=(4.5, 3), dpi=600)
+plt.plot(range(len(time_bulk)), TAI_per_stage, marker='o', color='darkred', linewidth=1)
+plt.xlabel('Stages', fontsize=13, fontweight='bold')
+plt.ylabel('TAI', fontsize=13, fontweight='bold')
+plt.xticks(np.arange(len(time_bulk)), time_bulk, fontsize=10, rotation=90)
+# plt.title('Transcriptome Age Index (Hourglass Model)', fontsize=14)
+plt.grid(False)
+plt.tight_layout()
+plt.savefig(path + 'TAI_across_development.png', dpi=600, bbox_inches='tight')
+plt.show()
+
+
+
+# =============================================================================
+# 7.1.) Transcriptome Age Index (TAI) per geen class (U, S, hS)
+# =============================================================================
+all_ages_myr = np.array([4290.0 if str(x) == '>4290' else float(x) for x in age_df])
+edades_unicas_ordenadas = np.sort(np.unique(all_ages_myr))[::-1]
+ps_dict_global = {edad: rango + 1 for rango, edad in enumerate(edades_unicas_ordenadas)}
+
+def calc_tai_for_subset(subset_ids, genes_bulk, expr_matrix, genes_df, age_df, ps_dict):
+    common_genes = np.intersect1d(subset_ids, np.intersect1d(genes_bulk, genes_df))
+    
+    _, ind_expr, _ = np.intersect1d(genes_bulk, common_genes, return_indices=True)
+    sub_expr = expr_matrix[ind_expr, :]
+    
+    _, ind_age, _ = np.intersect1d(genes_df, common_genes, return_indices=True)
+    sub_ages_raw = np.array(age_df)[ind_age]
+    
+    sub_ages_myr = np.array([4290.0 if str(x) == '>4290' else float(x) for x in sub_ages_raw])
+    
+    sub_ps = np.array([ps_dict[edad] for edad in sub_ages_myr])
+    
+    num_stages = sub_expr.shape[1]
+    tai_stages = np.zeros(num_stages)
+    
+    for s in range(num_stages):
+        total_expr = np.sum(sub_expr[:, s])
+        if total_expr > 0:
+            tai_stages[s] = np.sum(sub_expr[:, s] * sub_ps) / total_expr
+        else:
+            tai_stages[s] = 0
+            
+    return tai_stages
+
+tai_U = calc_tai_for_subset(U_id_bulk, genes_bulk, mean_bulk_matrix, genes_df, age_df, ps_dict_global)
+tai_S = calc_tai_for_subset(S_id_bulk, genes_bulk, mean_bulk_matrix, genes_df, age_df, ps_dict_global)
+tai_hS = calc_tai_for_subset(hS_id_bulk, genes_bulk, mean_bulk_matrix, genes_df, age_df, ps_dict_global)
+
+
+plt.figure(figsize=(8, 4.5), dpi=600)
+plt.plot(range(len(time_bulk)), tai_U, marker='o', color='royalblue', linewidth=1, label='U genes')
+plt.plot(range(len(time_bulk)), tai_S, marker='s', color='mediumturquoise', linewidth=1, label='S genes')
+plt.plot(range(len(time_bulk)), tai_hS, marker='^', color='tomato', linewidth=1, label='hS genes')
+plt.xlabel('Stages', fontsize=19, fontweight='bold')
+plt.ylabel('TAI', fontsize=19, fontweight='bold')
+plt.xticks(np.arange(len(time_bulk)), time_bulk, fontsize=17, rotation=90)
+plt.yticks(fontsize=17)
+plt.legend(fontsize=11, loc='upper right')
+plt.grid(False)
+plt.tight_layout()
+plt.savefig(path + 'TAI_across_classes.png', dpi=600, bbox_inches='tight')
+plt.show()
+
+
+
+# 7.2.) Cumulative TAI
+U_ids = np.array(U_id_bulk)
+U_plus_S_ids = np.concatenate((U_ids, S_id_bulk))
+U_plus_S_plus_hS_ids = np.concatenate((U_plus_S_ids, hS_id_bulk))
+
+tai_U = calc_tai_for_subset(U_ids, genes_bulk, mean_bulk_matrix, genes_df, age_df, ps_dict_global)
+tai_U_S = calc_tai_for_subset(U_plus_S_ids, genes_bulk, mean_bulk_matrix, genes_df, age_df, ps_dict_global)
+tai_U_S_hS = calc_tai_for_subset(U_plus_S_plus_hS_ids, genes_bulk, mean_bulk_matrix, genes_df, age_df, ps_dict_global)
+
+plt.figure(figsize=(8, 4.5), dpi=600)
+plt.plot(range(len(time_bulk)), tai_U, marker='o', color='royalblue', linewidth=1.5, label='U')
+plt.plot(range(len(time_bulk)), tai_U_S, marker='s', color='forestgreen', linewidth=1.5, label='U + S')
+plt.plot(range(len(time_bulk)), tai_U_S_hS, marker='^', color='darkred', linewidth=1.5, label='U + S + hS')
+plt.xlabel('Stages', fontsize=19, fontweight='bold')
+plt.ylabel('TAI', fontsize=19, fontweight='bold')
+plt.xticks(np.arange(len(time_bulk)), time_bulk, fontsize=17, rotation=90)
+plt.yticks(fontsize=17)
+plt.legend(fontsize=11, loc='upper left')
+plt.grid(False)
+plt.tight_layout()
+plt.savefig(path + 'TAI_cumulative_classes.png', dpi=600, bbox_inches='tight')
+plt.show()
+
+
+#===================================================================================
+#8.) Sliding window for each subclass
+
+#8.1.) We read the subclasses
 label=['U_dev_U_tis', 'U_dev_S_tis', 'U_dev_hS_tis', 
        'S_dev_U_tis', 'S_dev_S_tis', 'S_dev_hS_tis',
        'hS_dev_U_tis', 'hS_dev_S_tis', 'hS_dev_hS_tis']
@@ -541,7 +661,7 @@ plt.show()
 
 
 
-#4.) KS test
+#9.) KS test
 from scipy import stats
 ks_U_S, pvalue_U_S = stats.ks_2samp(U_dev_U_tis_age, U_dev_S_tis_age)
 print('U vs S:', ks_U_S, pvalue_U_S)
