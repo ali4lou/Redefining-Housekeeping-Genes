@@ -13,12 +13,11 @@ import matplotlib.pyplot as plt
 # ==========================================
 # PATHS
 # ==========================================
-path_save_data = r'D:\\zebrafish\\revision\\'
-path_genes = r'D:\zebrafish\zebrafish_code\tissue\tissue_temperature\U_id_tissue.txt'
-path_dictionary = r'D:\zebrafish\ontology\zfin_to_ENS.txt' 
-h5ad_path = r'D:\zebrafish\revision\Zebrafish_Adult_FINAL.h5ad'
-path_metadata = r'D:\zebrafish\revision\ZCDL_cellinfo.csv'
-
+path_save_data = 'PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path_genes = 'PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path_dictionary = 'PATH_WHERE_YOU_KEEP_YOUR_DATASETS' 
+h5ad_path = 'PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path_metadata = 'PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
 
 
 #TISSUE
@@ -161,17 +160,8 @@ plt.show()
 
 #DEVELOPMENT
 
-path_save_data='D:\\zebrafish\\zebrafish_code\\single_cell_more_cell_types\\'
-path_bulk='D:\\zebrafish\\zebrafish_code\\bulk\\'
-
-# path_save_data_final='/media/alicia/TOSHIBA EXT/zebrafish/revision/'
-# path_save_data='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/single_cell_more_cell_types/'
-# path_bulk='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/bulk/'
-
-
-# path_save_data='/home/alicia/Documents/zebrafish/zebrafish_code/single_cell/'   
-# path_bulk='/home/alicia/Documents/zebrafish/zebrafish_code/bulk/'
-
+path_save_data='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path_bulk='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
 
 timepoints = ['10hpf', '12hpf', '14hpf', '16hpf', '19hpf', '24hpf', '2dpf', '3dpf', '5dpf', '10dpf']
 
