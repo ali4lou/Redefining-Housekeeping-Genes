@@ -1,20 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 25 16:13:48 2026
-
-@author: alicia
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Mar 17 15:15:52 2025
-
-bulk analysis tissue - temperatures
-
-@author: Alicia
-"""
-
 
 import numpy as np 
 import pandas as pd
@@ -30,26 +13,13 @@ import obonet
 import networkx as nx
 
 
-path_figures='/media/alicia/TOSHIBA EXT/zebrafish/revision/'
+path_figures='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
 #========================================================================================
 #TISSUE
 #========================================================================================
-
-# path_data='D:\\zebrafish\\zebrafish_code\\tissue\\tissue_temperature\\data\\'
-# path_save_data='D:\\zebrafish\\zebrafish_code\\tissue\\tissue_temperature\\'
-# path_bulk_initial='D:\\zebrafish\\zebrafish_code\\bulk\\'
-
-path_data='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/tissue/tissue_temperature/data/'
-path_save_data='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/tissue/tissue_temperature/'
-path_bulk_initial='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/bulk/'
-
-
-# path_save_data='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/single_cell_more_cell_types/'
-# path_bulk_initial='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/bulk/'
-
-
-# path_save_data='/home/alicia/Documents/zebrafish/zebrafish_code/single_cell/'   
-# path_bulk='/home/alicia/Documents/zebrafish/zebrafish_code/bulk/'
+path_data='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path_save_data='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path_bulk_initial='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
 
 tissue=['brain', 'gill', 'heart', 'intestine', 'kidney', 'liver', 'muscle', 'spleen']
 temp = ['10', '18', '28']
@@ -321,11 +291,10 @@ plt.show()
 # 1.0) PATHS AND DATA LOADING
 # ===================================================================================
 
-path_save_data='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/bulk/'
-path='/media/alicia/TOSHIBA EXT/zebrafish/gene_origin/'
-path_ontology='/media/alicia/TOSHIBA EXT/zebrafish/ontology/'   
-path_sc='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/single_cell/'
-path_go='/media/alicia/TOSHIBA EXT/zebrafish/ontology/GO/'
+path_save_data='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path_ontology='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'  
+path_go='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
 
 file_path = path_save_data+"elife-30860-supp3-v1.tsv"
 
