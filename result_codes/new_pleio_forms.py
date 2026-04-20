@@ -1,21 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 20 11:47:02 2026
-
-@author: logslab
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jan 27 14:22:31 2025
-
-@author: logslab
-
-
-Zebrafish ANATOMICAL ONTOLOGY
-"""
-
-#construcción de la matriz fenotípica 
 
 import obonet
 import numpy as np
@@ -58,19 +40,9 @@ def find_ancestors(reverse_graph, term):
     return ancestors
 
 
-# path='D:\\zebrafish\\ontology\\'
-# path_bulk='D:\\zebrafish\\zebrafish_code\\bulk\\'
-# path_sc='D:\\zebrafish\\zebrafish_code\\single_cell\\'
-
-# path='/home/alicia/Documents/zebrafish/ontology/'
-# path_sc='/home/alicia/Documents/zebrafish/zebrafish_code/single_cell/'   
-# path_bulk='/home/alicia/Documents/zebrafish/zebrafish_code/bulk/'
-
 path='/media/alicia/TOSHIBA EXT/zebrafish/ontology/'
 path_sc='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/single_cell/'
 path_bulk='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/bulk/'
-
-
 
 
 #0.) Charge data
