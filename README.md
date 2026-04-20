@@ -20,7 +20,7 @@ This repository is organized into two main folders:
 | `figure_GO_terms.py` | Visualization of GO terms enrichment | Figure **2A** | Output of GO enrichment scripts |
 | `zebrafish_ontology.py`, `anatomical_pleio_subclasses.py`, `ontology_genes_phen_per_stage_and_lethality.py` | Anatomical pleiotropy and lethality analysis | Figures **4**, **S3**, Table **S4** | ZFIN ontology and phenotype files |
 | `gene_origin.py` | Evolutionary gene age analysis | Figures **5**, **S5** | `gene_origin.csv` (GenOrigin) |
-| `homology.py` | Paralog and ortholog homology analysis | Figures **6**, **S5**, Table **S6** | `paralog.txt`, `human_orthos.txt` |
+| `homology.py` | Paralog and ortholog homology analysis | Figures **6**, **S6**, Table **S6** | `paralog.txt`, `human_orthos.txt` |
 | `gene_ontology.py` | GO enrichment for gene classes | Tables **S2**, **S3** | `go.obo`, `zfin.gaf` *(run `great_library_phenotype.py` first)* |
 | `enrichment_U_hourglass.py`, `young_genes_enrichment.py` | GO enrichment of evolutionary subsets (U-old, S/hS-young classes) | Table **S5** | `go.obo`, `zfin.gaf` *(run `great_library_phenotype.py` first)* |
 
