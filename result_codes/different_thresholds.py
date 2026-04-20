@@ -28,10 +28,10 @@ import networkx as nx
 # 1.0) PATHS AND DATA LOADING
 # ===================================================================================
 
-path_save_data='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/bulk/'
-path='/media/alicia/TOSHIBA EXT/zebrafish/gene_origin/'
-path_ontology='/media/alicia/TOSHIBA EXT/zebrafish/ontology/'   
-path_go='/media/alicia/TOSHIBA EXT/zebrafish/ontology/GO/'
+path_save_data='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path_ontology='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'   
+path_go='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
 
 file_path = path_save_data+"elife-30860-supp3-v1.tsv"
 
