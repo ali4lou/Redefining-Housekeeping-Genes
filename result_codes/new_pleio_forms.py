@@ -40,9 +40,8 @@ def find_ancestors(reverse_graph, term):
     return ancestors
 
 
-path='/media/alicia/TOSHIBA EXT/zebrafish/ontology/'
-path_sc='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/single_cell/'
-path_bulk='/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/bulk/'
+path='PATH_WHERE_YOU_KEEP_THE_REQUIRED_DATASETS'
+path_bulk='PATH_WHERE_YOU_KEEP_THE_REQUIRED_DATASETS'
 
 
 #0.) Charge data
