@@ -25,7 +25,7 @@ This repository is organized into two main folders:
 | `enrichment_U_hourglass.py`, `young_genes_enrichment.py` | GO enrichment of evolutionary subsets (U-old, S/hS-young classes) | Table **S5** | `go.obo`, `zfin.gaf` *(run `great_library_phenotype.py` first)* |
 | `tau_cv_tissue_dev.py` | Analysis with continuous metrics | Figure **S7**, Table **S7** | Bulk embryonic and tissue RNA-seq datasets |
 | `different_thresholds.py` | Evaluates the robustness of the gene expression thresholds | Figure **S8** | Bulk embryonic RNA-seq dataset (White et al., 2017) |
-| `Wang_conversion.R`, `comparison_single_cell_data.py`, `create_data_sc_adult_h5ad.py` | Analysis of ubiquitous genes in single-cell transcriptomic data | Figure **S9** | Developmental scRNA-seq dataset (Lange et al., 2024; Zebrahub portal). Adult scRNA-seq dataset (Wang et al., 2023; Zebrafish Cell Landscape v2.0) |
+| `Wang_conversion.R`, `create_data_sc_adult_h5ad.py`, `comparison_single_cell_data.py` | Analysis of ubiquitous genes in single-cell transcriptomic data | Figure **S9** | Developmental scRNA-seq dataset (Lange et al., 2024; Zebrahub portal). Adult scRNA-seq dataset (Wang et al., 2023; Zebrafish Cell Landscape v2.0) |
 
 ---
 
