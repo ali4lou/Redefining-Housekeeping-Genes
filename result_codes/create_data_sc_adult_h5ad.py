@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Mar 23 11:08:23 2026
-
-@author: alicia
-"""
 
 import scanpy as sc
 import pandas as pd
@@ -16,7 +9,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-os.chdir(r"/media/alicia/TOSHIBA EXT/zebrafish/revision")
+os.chdir(r"PATH_WHERE_YOU_KEEP_YOUR_DATASETS")
 
 mat = scipy.io.mmread("Zebrafish_counts.mtx")
 
