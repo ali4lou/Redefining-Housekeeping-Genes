@@ -1,8 +1,3 @@
-# ==============================================================================
-# Script: 01_Wang_Data_Conversion.R
-# Purpose: Extract raw count matrices and features from the Zebrafish Cell 
-#          Landscape (ZCL) Seurat object.
-# ==============================================================================
 
 # Load required libraries
 library(Seurat)
