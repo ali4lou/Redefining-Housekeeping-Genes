@@ -23,6 +23,9 @@ This repository is organized into two main folders:
 | `homology.py` | Paralog and ortholog homology analysis | Figures **6**, **S6**, Table **S6** | `paralog.txt`, `human_orthos.txt` |
 | `gene_ontology.py` | GO enrichment for gene classes | Tables **S2**, **S3** | `go.obo`, `zfin.gaf` *(run `great_library_phenotype.py` first)* |
 | `enrichment_U_hourglass.py`, `young_genes_enrichment.py` | GO enrichment of evolutionary subsets (U-old, S/hS-young classes) | Table **S5** | `go.obo`, `zfin.gaf` *(run `great_library_phenotype.py` first)* |
+| `different_thresholds.py` | Evaluates the robustness of the gene expression thresholds | Figure **S8** | Bulk embryonic RNA-seq dataset (White et al., 2017) |
+| `tau_cv_tissue_dev.py` | Analysis with continuous metrics | Figure **S7** | Bulk embryonic and tissue RNA-seq datasets |
+| `Wang_conversion.R`, `comparison_single_cell_data.py`, `create_data_sc_adult_h5ad.py` | Analysis of ubiquitous genes in single-cell transcriptomic data | Figure **S9** | Developmental scRNA-seq dataset (Lange et al., 2024; Zebrahub portal). Adult scRNA-seq dataset (Wang et al., 2023; Zebrafish Cell Landscape v2.0) |
 
 ---
 
@@ -33,4 +36,10 @@ https://doi.org/10.7554/eLife.30860
 
 Hu, P., et al. (2015). Global identification of the genetic networks and cis-regulatory elements of the cold response in zebrafish. Nucleic Acids Research, 43(19), 9198–9213.
 https://doi.org/10.1093/nar/gkv780
+
+Lange, M., et al. (2024). A multimodal zebrafish developmental atlas reveals the state-transition dynamics of late-vertebrate pluripotent axial progenitors. Cell, 187(23), 6742-6759.e17.
+https://doi.org/10.1016/j.cell.2024.09.047
+
+Wang, R., et al. (2023). Construction of a cross-species cell landscape at single-cell level. Nucleic Acids Research, 51(2), 501–516.
+https://doi.org/10.1093/nar/gkac633
 
