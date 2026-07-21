@@ -26,6 +26,7 @@ This repository is organized into two main folders:
 | `tau_cv_tissue_dev.py` | Analysis with continuous metrics | Figure **S7**, Table **S7** | Bulk embryonic and tissue RNA-seq datasets |
 | `different_thresholds.py` | Evaluates the robustness of the gene expression thresholds | Figure **S8** | Bulk embryonic RNA-seq dataset (White et al., 2017) |
 | `Wang_conversion.R`, `create_data_sc_adult_h5ad.py`, `comparison_single_cell_data.py` | Analysis of ubiquitous genes in single-cell transcriptomic data | Figure **S9** | Developmental scRNA-seq dataset (Lange et al., 2024; Zebrahub portal). Adult scRNA-seq dataset (Wang et al., 2023; Zebrafish Cell Landscape v2.0) |
+| `BO_data_comparison.py` | Comparison between the developmental classifications of White et al. (2017) and Bo et al. (2025) | Figure **S1E** | Bulk embryonic RNA-seq dataset (Bo et al., 2025) |
 
 ---
 
@@ -42,4 +43,6 @@ https://doi.org/10.1016/j.cell.2024.09.047
 
 Wang, R., et al. (2023). Construction of a cross-species cell landscape at single-cell level. Nucleic Acids Research, 51(2), 501–516.
 https://doi.org/10.1093/nar/gkac633
+
+Bo, J., et al. (2025). High resolution of full-length RNA sequencing deciphers massive transcriptome complexity during zebrafish embryogenesis. BMC Biol., 23(1), 155. https://doi.org/10.1186/s12915-025-02271-2
 
