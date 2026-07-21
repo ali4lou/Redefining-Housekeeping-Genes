@@ -5,8 +5,8 @@ import glob
 import matplotlib.pyplot as plt 
 import os
 
-path_save_data = '/media/alicia/TOSHIBA EXT/zebrafish/comparison_Bo_data/'
-path='/media/alicia/TOSHIBA EXT/zebrafish/comparison_Bo_data/merge_iso_expression/'
+path_save_data = 'PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+path='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
 
 # =============================================================================
 # 1. GTF to map TCONS to Ensembl (ENSDARG)
