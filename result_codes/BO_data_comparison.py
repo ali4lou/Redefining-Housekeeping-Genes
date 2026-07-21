@@ -7,6 +7,7 @@ import os
 
 path_save_data = 'PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
 path='PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
+old_path = 'PATH_WHERE_YOU_KEEP_YOUR_DATASETS'
 
 # =============================================================================
 # 1. GTF to map TCONS to Ensembl (ENSDARG)
@@ -211,15 +212,13 @@ print("\n" + "="*60)
 print("COMPARISON")
 print("="*60)
 
-old_path = '/media/alicia/TOSHIBA EXT/zebrafish/zebrafish_code/bulk/'
-
 # 1. Files
 def load_old_file(filename):
     filepath = os.path.join(old_path, filename)
     try:
         return set(np.loadtxt(filepath, dtype=str))
     except Exception as e:
-        print(f"⚠️ No se pudo cargar {filename}: {e}")
+        print(f"No file {filename}: {e}")
         return set()
 
 old_hS = load_old_file('hS_id_bulk.txt')
@@ -246,9 +245,9 @@ def trace_new_class(class_name, new_set, old_hS, old_S, old_U, old_null, all_old
     # 2. New genes
     nuevos_reales = new_set.difference(all_old)
     
-    print(f"\n--- ANÁLISIS DE LA NUEVA CLASE: {class_name} (Total actual: {total_new} genes) ---")
-    print(f"🔹 Genes conservados (estaban en el dataset antiguo): {total_conservados} genes ({(total_conservados/total_new)*100:.2f}%)")
-    print(f"🔸 Genes totalmente nuevos (NO estaban en el antiguo): {len(nuevos_reales)} genes ({(len(nuevos_reales)/total_new)*100:.2f}%)")
+    print(f"\n--- ANALYSIS NEW GENE CLASSES: {class_name} (Total: {total_new} genes) ---")
+    print(f"Conserved genes (old dataset): {total_conservados} genes ({(total_conservados/total_new)*100:.2f}%)")
+    print(f"New ones: {len(nuevos_reales)} genes ({(len(nuevos_reales)/total_new)*100:.2f}%)")
     
     if total_conservados > 0:
         print(f"\n   De los {total_conservados} genes conservados de la nueva clase {class_name}, en el dataset antiguo eran:")
@@ -298,8 +297,8 @@ for i, new_set in enumerate(new_classes):
 
 fig, ax = plt.subplots(figsize=(4.1, 4.1), dpi=600)
 colors = ['royalblue', 'mediumturquoise', 'tomato', 'gray']
-for i in range(4): # Eje Y (Nuevo Dataset - Bo et al.)
-    for j in range(4): # Eje X (Antiguo Dataset - White et al.)
+for i in range(4): # Y (Bo et al.)
+    for j in range(4): # X (White et al.)
         count = matrix_counts[i, j]
         frac = matrix_fracs[i, j]
         plt.scatter(j + 0.5, i + 0.5, s=frac * 2500, color=colors[i], alpha=0.8)
