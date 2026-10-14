@@ -1,5 +1,5 @@
 # Redefining Housekeeping Genes 
-Source code, datasets, and instructions for reproducing the results of our paper 'Redefining Housekeeping Genes in the Context of Vertebrate Development' 
+Source code, datasets, and instructions for reproducing the results of our paper 'Developmental and tissue expression breadth define distinct but overlapping classes of housekeeping genes' 
 
 ## Reproducing the Results
 
